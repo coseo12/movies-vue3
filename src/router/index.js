@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import DashboardPage from '../views/DashboardPage.vue';
-import MoviePage from '../views/MoviePage.vue';
-import TvPage from '../views/TvPage.vue';
+import DashboardPage from '@/views/DashboardPage.vue';
+import MoviePage from '@/views/MoviePage.vue';
+import TvPage from '@/views/TvPage.vue';
 
 const routes = [
   {
