@@ -1,5 +1,7 @@
 <template>
-  <t-app v-bind="appBar" />
+  <div class="p-app">
+    <t-app v-bind="appBar" />
+  </div>
 </template>
 
 <script>
@@ -8,10 +10,9 @@ import { TApp } from '@/components/templates';
 
 export default {
   name: 'App',
-  components: {
-    TApp,
-  },
+  components: { TApp },
   setup() {
+    const loading = ref(true);
     const menuList = ref([
       { text: '홈', to: '/' },
       { text: 'TV프로그램', to: '/tv' },
@@ -25,7 +26,7 @@ export default {
       searchFn,
     });
 
-    return { appBar };
+    return { appBar, loading };
   },
 };
 </script>
