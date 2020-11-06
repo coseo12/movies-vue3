@@ -28,14 +28,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/_variables.scss';
+
 .m-menu-bar {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .m-menu-bar__link:hover {
-  text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4,
-    0 0 80px #03bcf4, 0 0 160px #03bcf4;
+  text-shadow: $text-shadow-nav;
 }
 .m-menu-bar__link {
   position: relative;

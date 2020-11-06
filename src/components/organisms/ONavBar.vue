@@ -51,6 +51,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/_variables.scss';
+
 .o-nav-bar {
   position: sticky;
   display: flex;
@@ -82,7 +84,7 @@ export default {
     left: -285px;
     width: 320px;
     z-index: 0;
-    background-color: #141414;
+    background-color: $color-background;
   }
 }
 </style>

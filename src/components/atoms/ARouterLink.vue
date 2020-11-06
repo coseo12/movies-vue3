@@ -22,8 +22,8 @@ export default {
 a {
   cursor: pointer;
   text-decoration: none;
-  color: $font-color;
-  font-size: $font-size;
+  color: $font-color-default;
+  font-size: $font-size-default;
   font-weight: $font-weight-light;
   margin-left: 10px;
 }

@@ -1,5 +1,21 @@
-$bg-color: #141414;
-$font-color: #ffffff;
+$color-background: #141414;
+$color-reflect: #0008;
+$color-text-shadow: #03bcf4;
+$color-scoll: #88e3ff;
+$color-scoll-hover: #03bcf4;
+$color-loader: #e5f403;
+
 $font-weight-light: 300;
 $font-weight-medium: 500;
-$font-size: 1rem;
+
+$font-size-default: 1rem;
+$font-size-h1: 1.3rem;
+$font-size-h2: 1.2rem;
+$font-size-h3: 1.1rem;
+$font-color-default: #ffffff;
+$font-color-logo: #0e3742;
+
+$input-border: 1px solid #ffffff;
+
+$text-shadow-nav: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4,
+  0 0 80px #03bcf4, 0 0 160px #03bcf4;
