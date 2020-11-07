@@ -48,8 +48,8 @@ export default {
   justify-content: flex-end;
   padding: 10px 20px;
   left: 10px;
-  bottom: 150px;
-  width: 300px;
+  bottom: 350px;
+  width: 400px;
   z-index: 0;
 
   .m-meta-info__title {

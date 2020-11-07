@@ -23,6 +23,6 @@ export default {
 <style lang="scss" scoped>
 .o-billboard__img {
   width: 100vw;
-  height: 90vh;
+  height: 70vh;
 }
 </style>
