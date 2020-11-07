@@ -2,13 +2,12 @@
   <div class="m-meta-info">
     <div class="m-meta-info__title">
       <a-icon class="icon" size="22px" name="film" />
-      <span class="title">TItle</span>
+      <span class="title">
+        {{ title }}
+      </span>
     </div>
     <div class="m-meta-info__content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, nobis
-      ea, voluptatibus perspiciatis provident dolores quos mollitia omnis
-      voluptates ratione cupiditate consectetur. Libero iusto consectetur
-      doloribus architecto quod hic similique!
+      {{ content }}
     </div>
     <div class="m-meta-info__btn-box">
       <a-button class="play-btn">
@@ -34,6 +33,18 @@ export default {
   components: {
     AButton,
     AIcon,
+  },
+  props: {
+    title: {
+      type: String,
+      required: false,
+      default: '',
+    },
+    content: {
+      type: String,
+      required: false,
+      default: '',
+    },
   },
 };
 </script>

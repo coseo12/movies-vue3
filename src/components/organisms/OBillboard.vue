@@ -4,7 +4,14 @@
       class="o-billboard__img"
       src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701806056.jpg"
     />
-    <m-meta-info />
+    <m-meta-info
+      title="Title"
+      content="
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, nobis
+      ea, voluptatibus perspiciatis provident dolores quos mollitia omnis
+      voluptates ratione cupiditate consectetur. Libero iusto consectetur
+      doloribus architecto quod hic similique!"
+    />
   </div>
 </template>
 
@@ -36,7 +43,6 @@ export default {
       display: block;
       width: 100%;
       height: 100%;
-      z-index: 100;
       background: linear-gradient(
         transparent,
         transparent,
