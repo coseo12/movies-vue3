@@ -1,15 +1,15 @@
 <template>
   <div class="p-dashboard-page">
-    <o-billboard />
+    <t-dashboard />
   </div>
 </template>
 
 <script>
-import { OBillboard } from '@/components/organisms';
+import { TDashboard } from '@/components/templates';
 
 export default {
   components: {
-    OBillboard,
+    TDashboard,
   },
 };
 </script>

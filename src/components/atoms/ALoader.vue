@@ -23,7 +23,7 @@ export default {};
 
   animation: animate 2s linear infinite;
 
-  &::before {
+  &:before {
     content: '';
     position: absolute;
     top: 6px;
@@ -35,7 +35,7 @@ export default {};
     z-index: 1000;
   }
 
-  &::after {
+  &:after {
     content: '';
     position: absolute;
     top: 0px;

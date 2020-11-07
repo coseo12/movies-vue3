@@ -21,8 +21,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.o-billboard__img {
-  width: 100vw;
-  height: 70vh;
+@import '@/assets/scss/_variables.scss';
+
+.o-billboard {
+  position: relative;
+
+  .o-billboard__img {
+    width: 100vw;
+    height: 70vh;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      background: linear-gradient(
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        $color-background
+      );
+    }
+  }
 }
 </style>
