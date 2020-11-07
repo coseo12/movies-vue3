@@ -1,9 +1,13 @@
 <template>
-  <div>testaß</div>
+  <div class="m-carousel">
+    <slot />
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  components: {},
+};
 </script>
 
 <style lang="scss" scoped></style>
