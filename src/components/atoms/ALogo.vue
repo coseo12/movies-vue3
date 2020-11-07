@@ -23,8 +23,13 @@
     width: 100%;
     text-align: center;
     -webkit-box-reflect: below 1px linear-gradient(transparent, $color-reflect);
-    animation: animate 5s linear infinite;
+    color: $font-color-default;
+    text-shadow: $text-shadow-nav;
     margin-bottom: 10px;
+
+    &:hover {
+      animation: animate 4s linear infinite;
+    }
   }
 }
 

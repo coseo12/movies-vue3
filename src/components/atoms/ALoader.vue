@@ -20,7 +20,39 @@ export default {};
     transparent 40%,
     $color-loader
   );
+
   animation: animate 2s linear infinite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: $color-background;
+    border-radius: 50%;
+    z-index: 1000;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: $color-background;
+    border-radius: 50%;
+    z-index: 1;
+    filter: blur(30px);
+    background: linear-gradient(
+      45deg,
+      transparent,
+      transparent 40%,
+      $color-loader
+    );
+  }
 }
 @keyframes animate {
   0% {
@@ -31,34 +63,5 @@ export default {};
     transform: rotate(360deg);
     filter: hue-rotate(360deg);
   }
-}
-.a-loader::before {
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  right: 6px;
-  bottom: 6px;
-  background: $color-background;
-  border-radius: 50%;
-  z-index: 1000;
-}
-.a-loader::after {
-  content: '';
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background: $color-background;
-  border-radius: 50%;
-  z-index: 1;
-  filter: blur(30px);
-  background: linear-gradient(
-    45deg,
-    transparent,
-    transparent 40%,
-    $color-loader
-  );
 }
 </style>

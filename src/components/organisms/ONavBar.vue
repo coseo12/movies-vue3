@@ -1,30 +1,31 @@
 <template>
-  <div class="o-nav-bar">
+  <div :class="mainClass">
     <div class="o-nav-bar__menu">
       <a-logo />
       <m-menu-bar :menuList="menuList" />
     </div>
     <div class="o-nav-bar__info">
-      <a-icon-search
+      <a-icon
         class="search-icon"
         size="22px"
+        name="search"
         @click="search = !search"
       />
-      <a-input v-show="search" @keyup="searchFn" maxlength="40" />
+      <a-input v-show="search" @keyup="searchFn" maxlength="30" />
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-import { ALogo, AIconSearch, AInput } from '@/components/atoms';
+import { ref, onMounted } from 'vue';
+import { ALogo, AIcon, AInput } from '@/components/atoms';
 import { MMenuBar } from '@/components/molecules';
 
 export default {
   components: {
     MMenuBar,
     ALogo,
-    AIconSearch,
+    AIcon,
     AInput,
   },
   props: {
@@ -42,10 +43,25 @@ export default {
     },
   },
   setup() {
+    const mainClass = ref({
+      [`o-nav-bar`]: true,
+      scroll: false,
+    });
     const search = ref(false);
     const txt = ref('');
 
-    return { search, txt };
+    onMounted(() => {
+      document.addEventListener('scroll', () => {
+        const scollTop = document.scrollingElement.scrollTop;
+        if (scollTop > 0) {
+          mainClass.value.scroll = true;
+        } else {
+          mainClass.value.scroll = false;
+        }
+      });
+    });
+
+    return { search, txt, mainClass };
   },
 };
 </script>
@@ -54,12 +70,20 @@ export default {
 @import '@/assets/scss/_variables.scss';
 
 .o-nav-bar {
-  position: sticky;
+  width: 100vw;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
+  background: linear-gradient($color-background, transparent);
+  z-index: 10;
 }
+
+.scroll {
+  background: $color-background;
+}
+
 .o-nav-bar__menu {
   display: flex;
   justify-content: flex-start;
@@ -81,10 +105,9 @@ export default {
 
   input {
     position: absolute;
-    left: -285px;
-    width: 320px;
+    left: -250px;
+    width: 280px;
     z-index: 0;
-    background-color: $color-background;
   }
 }
 </style>

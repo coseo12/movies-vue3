@@ -35,9 +35,6 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.m-menu-bar__link:hover {
-  text-shadow: $text-shadow-nav;
-}
 .m-menu-bar__link {
   position: relative;
   display: flex;

@@ -1,6 +1,6 @@
-import App from '@/components/pages/App.vue';
-import DashboardPage from '@/components/pages/DashboardPage.vue';
-import MoviePage from '@/components/pages/MoviePage.vue';
-import TvPage from '@/components/pages/TvPage.vue';
+import PApp from '@/components/pages/PApp.vue';
+import PDashboardPage from '@/components/pages/PDashboardPage.vue';
+import PMoviePage from '@/components/pages/PMoviePage.vue';
+import PTvPage from '@/components/pages/PTvPage.vue';
 
-export { App, DashboardPage, MoviePage, TvPage };
+export { PApp, PDashboardPage, PMoviePage, PTvPage };
