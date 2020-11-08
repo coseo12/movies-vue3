@@ -4,6 +4,7 @@
       <m-t-card
         v-for="(data, i) in list"
         :key="data.id"
+        :title="data.title"
         :src="data.src"
         :ref="
           el => {
@@ -13,18 +14,24 @@
         class="card"
       />
     </div>
-    <div class="prev" @click="prevFn"></div>
-    <div class="next" @click="nextFn"></div>
+    <div class="prev" @click="prevFn">
+      <a-icon class="icon" name="left" color="#ffffff" size="22px" />
+    </div>
+    <div class="next" @click="nextFn">
+      <a-icon class="icon" name="right" color="#ffffff" size="22px" />
+    </div>
   </div>
 </template>
 
 <script>
 import { ref, onBeforeUpdate, onMounted, onUpdated } from 'vue';
 import MTCard from '@/components/molecules/MTCard';
+import { AIcon } from '@/components/atoms';
 
 export default {
   components: {
     MTCard,
+    AIcon,
   },
   props: {
     data: {
@@ -58,8 +65,6 @@ export default {
       new Proxy(arr, {
         get(target, prop, receiver) {
           if (prop < 0) {
-            // arr[1] 같은 형태로 배열 요소에 접근하는 경우에도
-            // prop은 문자열이기 때문에 숫자로 바꿔줘야 합니다.
             prop = +prop + target.length;
           }
           return Reflect.get(target, prop, receiver);
@@ -98,27 +103,25 @@ export default {
     const moveSlide = type => {
       if (type === 'next') {
         style.value.left = `${slideLen.value}px`;
-        // style.value.transition = `left 1s linear`;
-        // style.value.transitionDelay = `0s`;
         style.value.transitionDuration = `0.5s`;
-        // style.value.transitionTimingFunction = `linear`;
-        // style.value.transitionProperty = `all`;
       } else {
         style.value.left = `${-slideLen.value}px`;
-        // style.value.transition = `left 1s linear`;
-        // style.value.transitionDelay = `0s`;
         style.value.transitionDuration = `0.5s`;
-        // style.value.transitionTimingFunction = `linear`;
-        // style.value.transitionProperty = `all`;
       }
     };
 
     const prevFn = () => {
-      current.value = current.value - 1;
+      current.value =
+        props.data.length / page.value === 0
+          ? (current.value = 0)
+          : current.value - 1;
       moveSlide('prev');
     };
     const nextFn = () => {
-      current.value = current.value + 1;
+      current.value =
+        props.data.length / page.value === current.value
+          ? 0
+          : current.value + 1;
       moveSlide('next');
     };
 
@@ -149,9 +152,7 @@ export default {
       cardEls.value = [];
     });
 
-    onUpdated(() => {
-      setSlideLen();
-    });
+    onUpdated(() => {});
 
     return {
       list,
@@ -188,11 +189,19 @@ export default {
 
   .prev,
   .next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     width: 2vw;
     height: 100%;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+
+    .icon {
+      opacity: 0.5;
+    }
   }
 
   .prev {

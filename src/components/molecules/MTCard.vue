@@ -1,6 +1,8 @@
 <template>
   <div class="m-t-card">
     <a-img class="m-t-card__img" :src="src" />
+    <!-- <div class="title">{{ title }}</div>
+    <div class="rating">⭐️ {{ rating }} / 5</div> -->
   </div>
 </template>
 
@@ -12,11 +14,21 @@ export default {
     AImg,
   },
   props: {
+    title: {
+      type: String,
+      required: false,
+      default: 'title',
+    },
     src: {
       type: String,
       required: false,
       default:
         'https://cdn3.movieweb.com/i/article/ltBX7h8cBIkWHiRjfZAVaLYhrDfIC5/1200:100/The-Queens-Gambit-Trailer.jpg',
+    },
+    rating: {
+      type: Number,
+      required: false,
+      default: 5,
     },
   },
 };
