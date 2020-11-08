@@ -103,10 +103,10 @@ export default {
     const moveSlide = type => {
       if (type === 'next') {
         style.value.left = `${slideLen.value}px`;
-        style.value.transitionDuration = `0.5s`;
+        style.value.transitionDuration = `0.8s`;
       } else {
         style.value.left = `${-slideLen.value}px`;
-        style.value.transitionDuration = `0.5s`;
+        style.value.transitionDuration = `0.8s`;
       }
     };
 
@@ -127,9 +127,11 @@ export default {
 
     const transitionend = e => {
       if (e.propertyName === 'left') {
-        style.value.left = 0;
-        style.value.transitionDuration = '';
-        list.value = getDataSlice();
+        setTimeout(() => {
+          style.value.left = 0;
+          style.value.transitionDuration = '';
+          list.value = getDataSlice();
+        }, 100);
       }
     };
 
