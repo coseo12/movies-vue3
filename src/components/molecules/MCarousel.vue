@@ -53,8 +53,8 @@ export default {
     const style = ref({
       left: 0,
       transitionDelay: `0s`,
-      transitionDuration: `0.5s`,
-      transitionTimingFunction: `linear`,
+      transitionDuration: `0.8s`,
+      transitionTimingFunction: `ease-in-out`,
       transitionProperty: `left`,
     });
     const list = ref([]);
@@ -103,10 +103,10 @@ export default {
     const moveSlide = type => {
       if (type === 'next') {
         style.value.left = `${slideLen.value}px`;
-        style.value.transitionDuration = `0.8s`;
+        style.value.transitionDuration = `1s`;
       } else {
         style.value.left = `${-slideLen.value}px`;
-        style.value.transitionDuration = `0.8s`;
+        style.value.transitionDuration = `1s`;
       }
     };
 
