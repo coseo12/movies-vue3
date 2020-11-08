@@ -128,7 +128,7 @@ export default {
     const transitionend = e => {
       if (e.propertyName === 'left') {
         style.value.left = 0;
-        style.value.transitionDuration = `0.001s`;
+        style.value.transitionDuration = '';
         list.value = getDataSlice();
       }
     };
