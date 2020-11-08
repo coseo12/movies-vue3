@@ -1,17 +1,10 @@
 <template>
   <div class="o-billboard">
-    <a-img
-      class="o-billboard__img"
-      src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701806056.jpg"
-    />
+    <a-img class="o-billboard__img" :src="src" />
     <m-meta-info
       class="o-billboard__meta-box"
-      title="Title"
-      content="
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, nobis
-      ea, voluptatibus perspiciatis provident dolores quos mollitia omnis
-      voluptates ratione cupiditate consectetur. Libero iusto consectetur
-      doloribus architecto quod hic similique!"
+      :title="title"
+      :content="content"
     />
   </div>
 </template>
@@ -24,6 +17,27 @@ export default {
   components: {
     AImg,
     MMetaInfo,
+  },
+  props: {
+    title: {
+      type: String,
+      required: false,
+      default: 'Title',
+    },
+    content: {
+      type: String,
+      required: false,
+      default: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, nobis
+      ea, voluptatibus perspiciatis provident dolores quos mollitia omnis
+      voluptates ratione cupiditate consectetur. Libero iusto consectetur
+      doloribus architecto quod hic similique!`,
+    },
+    src: {
+      type: String,
+      required: false,
+      default:
+        'https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701806056.jpg',
+    },
   },
 };
 </script>

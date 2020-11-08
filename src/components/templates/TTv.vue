@@ -1,9 +1,9 @@
 <template>
   <div class="t-dashboard">
-    <o-billboard title="Home" />
+    <o-billboard title="TV" />
     <div class="t-dashboard__movies">
-      <o-lolomo class="lolomo" :data="cardData" title="POPULAR MOVIES" />
       <o-lolomo class="lolomo" :data="cardData" title="POPULAR TV" />
+      <o-lolomo class="lolomo" :data="cardData" title="TV SERISE" />
     </div>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <div class="m-t-card">
     <a-img class="m-t-card__img" :src="src" />
-    <!-- <div class="title">{{ title }}</div>
-    <div class="rating">⭐️ {{ rating }} / 5</div> -->
+    <!-- <div class="title">{{ src }}</div> -->
+    <!-- <div class="rating">⭐️ {{ rating }} / 5</div> -->
   </div>
 </template>
 
