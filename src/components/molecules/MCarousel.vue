@@ -14,10 +14,10 @@
         class="card"
       />
     </div>
-    <div class="prev" @click="prevFn">
+    <div class="prev btn" @click="prevFn">
       <a-icon class="icon" name="left" color="#ffffff" size="22px" />
     </div>
-    <div class="next" @click="nextFn">
+    <div class="next btn" @click="nextFn">
       <a-icon class="icon" name="right" color="#ffffff" size="22px" />
     </div>
   </div>
@@ -175,6 +175,11 @@ export default {
   overflow: hidden;
   justify-content: center;
 
+  &:hover > .btn {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+
   .box {
     position: relative;
     display: flex;
@@ -186,7 +191,6 @@ export default {
       margin-left: 0;
     }
   }
-
   .prev,
   .next {
     display: flex;
@@ -196,20 +200,26 @@ export default {
     width: 2vw;
     height: 100%;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    background-color: rgba(25, 25, 25, 0.9);
     cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
 
     .icon {
-      opacity: 0.5;
+      opacity: 0.9;
     }
   }
 
   .prev {
     left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 
   .next {
     right: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
   }
 }
 </style>
