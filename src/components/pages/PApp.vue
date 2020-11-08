@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import { ref, reactive } from 'vue';
-import { TApp } from '@/components/templates';
+import { ref } from 'vue';
+import TApp from '@/components/templates/TApp';
 
 export default {
   name: 'App',
@@ -20,7 +20,7 @@ export default {
     ]);
     const searchTxt = ref('');
     const searchFn = event => (searchTxt.value = event.target.value);
-    const appBar = reactive({
+    const appBar = ref({
       menuList,
       searchTxt,
       searchFn,

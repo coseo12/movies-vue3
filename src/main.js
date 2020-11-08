@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import { PApp } from '@/components/pages';
+import PApp from '@/components/pages/PApp';
 import router from '@/router';
 
 createApp(PApp)

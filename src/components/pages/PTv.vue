@@ -6,7 +6,7 @@
 
 <script>
 import { ref } from 'vue';
-import { TTv } from '@/components/templates';
+import TTv from '@/components/templates/TTv';
 
 export default {
   components: {

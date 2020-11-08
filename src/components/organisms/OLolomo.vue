@@ -1,17 +1,17 @@
 <template>
   <div class="o-lolomo">
     <a-label :title="title" />
-    <m-carousel :data="data" :card="card" />
+    <o-carousel :data="data" :card="card" />
   </div>
 </template>
 
 <script>
-import { ALabel } from '@/components/atoms';
-import { MCarousel } from '@/components/molecules';
+import ALabel from '@/components/atoms/ALabel';
+import OCarousel from '@/components/organisms/OCarousel';
 
 export default {
   components: {
-    MCarousel,
+    OCarousel,
     ALabel,
   },
   props: {
@@ -33,7 +33,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.o-lolomo {
-}
-</style>
+<style lang="scss" scoped></style>

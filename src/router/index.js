@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { PDashboard, PMovie, PTv } from '@/components/pages';
+import PDashboard from '@/components/pages/PDashboard';
+import PMovie from '@/components/pages/PMovie';
+import PTv from '@/components/pages/PTv';
 
 const routes = [
   {

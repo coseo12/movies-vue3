@@ -11,7 +11,8 @@
 </template>
 
 <script>
-import { ONavBar, OFooter } from '@/components/organisms';
+import ONavBar from '@/components/organisms/ONavBar';
+import OFooter from '@/components/organisms/OFooter';
 
 export default {
   components: {

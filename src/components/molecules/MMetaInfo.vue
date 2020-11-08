@@ -27,7 +27,8 @@
 </template>
 
 <script>
-import { AButton, AIcon } from '@/components/atoms';
+import AButton from '@/components/atoms/AButton';
+import AIcon from '@/components/atoms/AIcon';
 
 export default {
   components: {

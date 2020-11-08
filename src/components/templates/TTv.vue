@@ -12,7 +12,8 @@
 </template>
 
 <script>
-import { OBillboard, OLolomo } from '@/components/organisms';
+import OBillboard from '@/components/organisms/OBillboard';
+import OLolomo from '@/components/organisms/OLolomo';
 
 export default {
   components: {

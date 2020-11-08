@@ -6,7 +6,7 @@
 
 <script>
 import { ref } from 'vue';
-import { TMovie } from '@/components/templates';
+import TMovie from '@/components/templates/TMovie';
 
 export default {
   components: {

@@ -6,7 +6,7 @@
 
 <script>
 import { ref } from 'vue';
-import { TDashboard } from '@/components/templates';
+import TDashboard from '@/components/templates/TDashboard';
 
 export default {
   components: {

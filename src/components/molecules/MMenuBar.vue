@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { ARouterLink } from '@/components/atoms';
+import ARouterLink from '@/components/atoms/ARouterLink';
 
 export default {
   components: {

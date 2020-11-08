@@ -1,5 +1,5 @@
 <template>
-  <div class="m-carousel">
+  <div class="o-carousel">
     <div class="box" ref="box" :style="style" @transitionend="transitionend">
       <m-t-card
         v-for="(data, i) in list"
@@ -26,7 +26,7 @@
 <script>
 import { ref, onBeforeUpdate, onMounted, onUnmounted } from 'vue';
 import MTCard from '@/components/molecules/MTCard';
-import { AIcon } from '@/components/atoms';
+import AIcon from '@/components/atoms/AIcon';
 
 export default {
   components: {
@@ -178,7 +178,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.m-carousel {
+.o-carousel {
   position: relative;
   display: flex;
   overflow: hidden;

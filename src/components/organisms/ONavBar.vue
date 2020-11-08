@@ -18,8 +18,10 @@
 
 <script>
 import { ref, onMounted } from 'vue';
-import { ALogo, AIcon, AInput } from '@/components/atoms';
-import { MMenuBar } from '@/components/molecules';
+import ALogo from '@/components/atoms/ALogo';
+import AIcon from '@/components/atoms/AIcon';
+import AInput from '@/components/atoms/AInput';
+import MMenuBar from '@/components/molecules/MMenuBar';
 
 export default {
   components: {

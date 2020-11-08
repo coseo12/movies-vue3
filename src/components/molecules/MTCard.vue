@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { AImg } from '@/components/atoms';
+import AImg from '@/components/atoms/AImg';
 
 export default {
   components: {

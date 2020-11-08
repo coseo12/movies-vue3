@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import { AImg } from '@/components/atoms';
-import { MMetaInfo } from '@/components/molecules';
+import AImg from '@/components/atoms/AImg';
+import MMetaInfo from '@/components/molecules/MMetaInfo';
 
 export default {
   components: {
