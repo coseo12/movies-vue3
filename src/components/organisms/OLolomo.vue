@@ -14,8 +14,7 @@ export default {
   props: {
     data: {
       type: Array,
-      required: false,
-      default: () => [],
+      required: true,
     },
     card: {
       type: String,

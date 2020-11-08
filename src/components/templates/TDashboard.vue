@@ -2,7 +2,7 @@
   <div class="t-dashboard">
     <o-billboard v-show="true" />
     <div class="t-dashboard__movies">
-      <o-lolomo />
+      <o-lolomo :data="cardData" />
       <div>2</div>
       <div>3</div>
       <div>4</div>
@@ -17,6 +17,12 @@ export default {
   components: {
     OBillboard,
     OLolomo,
+  },
+  props: {
+    cardData: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>

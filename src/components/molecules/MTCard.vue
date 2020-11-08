@@ -1,11 +1,6 @@
 <template>
   <div class="m-t-card">
-    <a-img
-      class="m-t-card__img"
-      src="https://cdn3.movieweb.com/i/article/ltBX7h8cBIkWHiRjfZAVaLYhrDfIC5/1200:100/The-Queens-Gambit-Trailer.jpg"
-    />
-    <div class="title">{{ title }}</div>
-    <div class="rating">⭐️ {{ rating }} / 5</div>
+    <a-img class="m-t-card__img" :src="src" />
   </div>
 </template>
 
@@ -17,15 +12,11 @@ export default {
     AImg,
   },
   props: {
-    title: {
+    src: {
       type: String,
       required: false,
-      default: 'title',
-    },
-    rating: {
-      type: Number,
-      required: false,
-      default: 5,
+      default:
+        'https://cdn3.movieweb.com/i/article/ltBX7h8cBIkWHiRjfZAVaLYhrDfIC5/1200:100/The-Queens-Gambit-Trailer.jpg',
     },
   },
 };
@@ -47,7 +38,7 @@ export default {
   .m-t-card__img {
     width: 18.5vw;
     /* min-width: 300px; */
-    height: 25vh;
+    height: 50vh;
     /* min-height: 150px; */
     transform: scale(1);
     transition: transform 0.5s ease-in-out;
@@ -63,6 +54,7 @@ export default {
     left: 0;
     top: 0;
     margin: 10px;
+    animation: animate 1s ease-in-out;
   }
 
   .rating {
@@ -72,6 +64,18 @@ export default {
     margin: 10px;
     font-size: $font-size-s3;
     color: $color-rating;
+    animation: animate 1s ease-in-out;
+  }
+
+  @keyframes animate {
+    0%,
+    50%,
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 </style>

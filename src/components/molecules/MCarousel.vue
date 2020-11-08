@@ -1,10 +1,10 @@
 <template>
   <div class="m-carousel">
-    <div class="box" :style="style">
+    <div class="box" ref="box" :style="style" @transitionend="transitionend">
       <m-t-card
         v-for="(data, i) in list"
-        :key="i"
-        :title="`title${data}`"
+        :key="data.id"
+        :src="data.src"
         :ref="
           el => {
             cardEls[i] = el;
@@ -22,39 +22,37 @@
 import { ref, onBeforeUpdate, onMounted, onUpdated } from 'vue';
 import MTCard from '@/components/molecules/MTCard';
 
-const data = [];
-for (let i = 0; i < 50; i++) {
-  data.push(i);
-}
-
 export default {
   components: {
     MTCard,
   },
   props: {
-    // data: {
-    //   type: Array,
-    //   required: false,
-    //   default: () => [],
-    // },
+    data: {
+      type: Array,
+      required: false,
+      default: () => [],
+    },
     card: {
       type: String,
       required: false,
       default: 'title',
     },
   },
-  setup() {
+  setup(props) {
     const total = ref(0);
     const current = ref(0);
     const page = ref(5);
     const cardEls = ref([]);
     const style = ref({
       left: 0,
-      transition: `left 1s linear`,
+      transitionDelay: `0s`,
+      transitionDuration: `0.5s`,
+      transitionTimingFunction: `linear`,
+      transitionProperty: `left`,
     });
     const list = ref([]);
     const listLen = ref(0);
-    const slideLen = ref();
+    const slideLen = ref(0);
 
     const getArrayProxy = arr =>
       new Proxy(arr, {
@@ -69,9 +67,9 @@ export default {
       });
 
     const getDataSlice = () => {
-      if (data.length === 0) return [];
+      if (props.data.length === 0) return [];
 
-      const items = getArrayProxy([...data]);
+      const items = getArrayProxy([...props.data]);
       const start = current.value * page.value;
       const arr = [];
 
@@ -98,29 +96,38 @@ export default {
     };
 
     const moveSlide = type => {
-      console.log('a', style.value);
       if (type === 'next') {
         style.value.left = `${slideLen.value}px`;
-        style.value.transition = `left 1s linear`;
+        // style.value.transition = `left 1s linear`;
+        // style.value.transitionDelay = `0s`;
+        style.value.transitionDuration = `0.5s`;
+        // style.value.transitionTimingFunction = `linear`;
+        // style.value.transitionProperty = `all`;
       } else {
-        style.value.left = `${slideLen.value}px`;
-        style.value.transition = `left 1s linear`;
+        style.value.left = `${-slideLen.value}px`;
+        // style.value.transition = `left 1s linear`;
+        // style.value.transitionDelay = `0s`;
+        style.value.transitionDuration = `0.5s`;
+        // style.value.transitionTimingFunction = `linear`;
+        // style.value.transitionProperty = `all`;
       }
     };
 
     const prevFn = () => {
       current.value = current.value - 1;
       moveSlide('prev');
-      setTimeout(() => {
-        list.value = getDataSlice();
-      }, 1000);
     };
     const nextFn = () => {
       current.value = current.value + 1;
-      // moveSlide('next');
-      setTimeout(() => {
+      moveSlide('next');
+    };
+
+    const transitionend = e => {
+      if (e.propertyName === 'left') {
+        style.value.left = 0;
+        style.value.transitionDuration = `0.001s`;
         list.value = getDataSlice();
-      }, 1000);
+      }
     };
 
     const setSlideLen = () => {
@@ -154,6 +161,7 @@ export default {
       nextFn,
       cardEls,
       style,
+      transitionend,
     };
   },
 };
@@ -184,7 +192,7 @@ export default {
     width: 2vw;
     height: 100%;
     z-index: 1;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .prev {

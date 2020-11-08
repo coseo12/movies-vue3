@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { computed } from 'vue';
 
 export default {
   props: {
@@ -14,11 +14,13 @@ export default {
         'https://free4kwallpapers.com/uploads/originals/2020/05/01/interstellar-wallpaper.jpg',
     },
   },
-  setup({ src }) {
-    const bgStyle = ref({
-      backgroundImage: `url(${src})`,
+  setup(props) {
+    const bgStyle = computed(() => {
+      const item = props.src;
+      return {
+        backgroundImage: `url(${item})`,
+      };
     });
-
     return {
       bgStyle,
     };
@@ -28,6 +30,8 @@ export default {
 
 <style lang="scss" scoped>
 .a-img {
+  width: inherit;
+  height: inherit;
   background-size: cover;
   background-position: center center;
 }
