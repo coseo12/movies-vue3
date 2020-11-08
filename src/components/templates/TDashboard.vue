@@ -1,8 +1,8 @@
 <template>
   <div class="t-dashboard">
-    <o-billboard />
+    <o-billboard v-show="true" />
     <div class="t-dashboard__movies">
-      <m-carousel />
+      <o-lolomo />
       <div>2</div>
       <div>3</div>
       <div>4</div>
@@ -11,23 +11,24 @@
 </template>
 
 <script>
-import { OBillboard } from '@/components/organisms';
-import { MCarousel } from '@/components/molecules';
+import { OBillboard, OLolomo } from '@/components/organisms';
 
 export default {
   components: {
     OBillboard,
-    MCarousel,
+    OLolomo,
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .t-dashboard {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
 .t-dashboard__movies {
+  position: relative;
   display: flex;
   flex-direction: column;
 }

@@ -58,10 +58,7 @@ export default {
   flex-direction: column;
   justify-content: flex-end;
   padding: 10px 20px;
-  left: 10px;
-  bottom: 20%;
   width: 400px;
-  z-index: 0;
 
   .m-meta-info__title {
     display: flex;
@@ -77,7 +74,9 @@ export default {
   .m-meta-info__content {
     margin: 20px 0;
     font-size: $font-size-h3;
+    font-weight: $font-weight-light;
     color: $font-color-default;
+    line-height: 20px;
   }
 
   .m-meta-info__btn-box {

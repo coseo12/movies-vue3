@@ -1,22 +1,22 @@
 <template>
-  <m-carousel>
-    <m-t-card v-if="card === 'title'" />
-    <m-r-card v-if="card === 'rank'" />
-    <m-p-card v-if="card === 'panel'" />
-  </m-carousel>
+  <div class="o-lolomo">
+    <m-carousel :data="data" :card="card" />
+  </div>
 </template>
 
 <script>
-import { MCarousel, MTCard, MRCard, MPCard } from '@/components/molecules';
+import { MCarousel } from '@/components/molecules';
 
 export default {
   components: {
     MCarousel,
-    MTCard,
-    MRCard,
-    MPCard,
   },
   props: {
+    data: {
+      type: Array,
+      required: false,
+      default: () => [],
+    },
     card: {
       type: String,
       required: false,
@@ -26,4 +26,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.o-lolomo {
+  overflow: hidden;
+}
+</style>

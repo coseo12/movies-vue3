@@ -5,6 +5,7 @@
       src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701806056.jpg"
     />
     <m-meta-info
+      class="o-billboard__meta-box"
       title="Title"
       content="
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, nobis
@@ -35,7 +36,7 @@ export default {
 
   .o-billboard__img {
     width: 100vw;
-    height: 70vh;
+    height: 80vh;
 
     &::before {
       content: '';
@@ -51,6 +52,12 @@ export default {
         $color-background
       );
     }
+  }
+
+  .o-billboard__meta-box {
+    position: absolute;
+    left: 0;
+    bottom: 20%;
   }
 }
 </style>

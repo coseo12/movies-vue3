@@ -9,6 +9,7 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
   background-color: $color-background;
   color: $font-color-default;
+  overflow-x: hidden;
 }
 ::-webkit-scrollbar {
   width: 12px;
