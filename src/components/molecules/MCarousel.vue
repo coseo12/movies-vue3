@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { ref, onBeforeUpdate, onMounted, onUpdated } from 'vue';
+import { ref, onBeforeUpdate, onMounted, onUnmounted } from 'vue';
 import MTCard from '@/components/molecules/MTCard';
 import { AIcon } from '@/components/atoms';
 
@@ -145,8 +145,13 @@ export default {
 
     list.value = getDataSlice();
 
+    const windowResize = () => {
+      setSlideLen();
+    };
+
     onMounted(() => {
       setSlideLen();
+      window.addEventListener('resize', windowResize);
     });
 
     // make sure to reset the refs before each update
@@ -154,7 +159,9 @@ export default {
       cardEls.value = [];
     });
 
-    onUpdated(() => {});
+    onUnmounted(() => {
+      window.removeEventListener('resize', windowResize);
+    });
 
     return {
       list,
@@ -199,7 +206,7 @@ export default {
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 2vw;
+    width: 2.1vw;
     height: 100%;
     z-index: 1;
     opacity: 0;
