@@ -1,6 +1,9 @@
 <template>
   <div class="t-dashboard">
-    <o-billboard title="TV" />
+    <o-billboard
+      title="TV"
+      src="https://wallpaperaccess.com/full/2439222.jpg"
+    />
     <div class="t-dashboard__movies">
       <o-lolomo class="lolomo" :data="cardData" title="POPULAR TV" />
       <o-lolomo class="lolomo" :data="cardData" title="TV SERISE" />

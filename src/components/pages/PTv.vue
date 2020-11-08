@@ -18,17 +18,17 @@ export default {
       const obj = {};
       const ran = Math.floor(Math.random() * 10);
       const src = [
-        'https://images-na.ssl-images-amazon.com/images/I/71nsvxFpSTL._AC_SY679_.jpg',
-        'https://cdn.shopify.com/s/files/1/0969/9128/products/Joker_-_Joaquin_Phoenix_-_Hollywood_Action_Movie_Poster_08339151-d79a-4b7b-8bc7-dcad04881c2c.jpg?v=1573629460',
-        'https://compote.slate.com/images/77440fdf-a599-4fd1-90fc-cc619aa7419d.jpg',
-        'https://c8.alamy.com/comp/RGRHYN/movie-poster-alpha-2018-RGRHYN.jpg',
-        'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/movie-poster-template-design-21a1c803fe4ff4b858de24f5c91ec57f_screen.jpg?ts=1574144362',
-        'https://images.moviepostershop.com/replicas-movie-poster-1000778791.jpg',
-        'https://www.washingtonpost.com/graphics/2019/entertainment/oscar-nominees-movie-poster-design/img/black-panther-web.jpg',
-        'https://cdn.shopify.com/s/files/1/0969/9128/products/1917_-_Sam_Mendes_-_Hollywood_War_Film_Classic_English_Movie_Poster_a12704bd-2b25-4aa7-8c8d-8f40cf467dc7.jpg?v=1582781089',
-        'https://images-na.ssl-images-amazon.com/images/I/71Tw-XHzu1L._AC_SL1200_.jpg',
-        'https://sep.yimg.com/ay/htmarket/now-showing-movie-poster-frame-24.gif',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ3_b5dEYJNSOTjW9RuiszPISiWQ19qR0Xwzw&usqp=CAU',
+        'https://cdn3.volusion.com/2dahj.3qwj9/v/vspfiles/photos/A7013-2.jpg?v-cache=1331225398',
+        'https://posterspy.com/wp-content/uploads/2014/07/Sherlock-poster-s3-OFFICIAL.jpg',
+        'https://img.moviepostershop.com/chuck-tv-movie-poster-2007-1010413273.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBbGwJWx26TDYw6EUH3pNxGaobGdIwMmofAA&usqp=CAU',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCdauNduOGsv_oOOLzdVDNfsdupXCjBdSh6g&usqp=CAU',
+        'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/94ab2ad3-e0d4-4764-85ad-873af742bd4a/ddgnoxw-9ba28d4a-e212-4f2f-949a-fb3caedb3f3b.png/v1/fill/w_1280,h_1947,q_80,strp/euphoria_tv_poster_by_arkhamnatic_ddgnoxw-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvOTRhYjJhZDMtZTBkNC00NzY0LTg1YWQtODczYWY3NDJiZDRhXC9kZGdub3h3LTliYTI4ZDRhLWUyMTItNGYyZi05NDlhLWZiM2NhZWRiM2YzYi5wbmciLCJoZWlnaHQiOiI8PTE5NDciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiJcL3dtXC85NGFiMmFkMy1lMGQ0LTQ3NjQtODVhZC04NzNhZjc0MmJkNGFcL2Fya2hhbW5hdGljLTQucG5nIiwib3BhY2l0eSI6OTUsInByb3BvcnRpb25zIjowLjQ1LCJncmF2aXR5IjoiY2VudGVyIn19.Hu_3HO51MWsf-3qdYnNTXw2GgWX3fetwC-UIYl8IDFs',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9uJn_glqgfm1_Qur95T3iDOY2Ci-MsEvCCw&usqp=CAU',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTPsEn5Oe4tZzzxOF91kdPUDpDqmtMIwD_tHQ&usqp=CAU',
+        'https://tvseriesfinale.com/wp-content/uploads/2015/10/Marvels-Jessica-Jones-Netflix-TV-Shows-season-one.jpg',
+        'https://media1.popsugar-assets.com/files/thumbor/iivpFJGNXxgeWn3EY2pkuwzNsug/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2019/07/01/647/n/1922283/8d790b1b78439c6f_TheWitcher_IGStory_Poster/i/Witcher-Netflix-TV-Series-Poster.jpg',
+        'https://fightingbroke.com/wp-content/uploads/2014/08/zombieland-tv-poster.jpg',
       ];
       obj.id = i;
       obj.title = `title${i}`;

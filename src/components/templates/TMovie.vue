@@ -1,6 +1,9 @@
 <template>
   <div class="t-dashboard">
-    <o-billboard title="Movies" />
+    <o-billboard
+      title="Movies"
+      src="https://i.pinimg.com/originals/2d/68/b4/2d68b431201137ee98e4b54434abfc5a.jpg"
+    />
     <div class="t-dashboard__movies">
       <o-lolomo class="lolomo" :data="cardData" title="POPULAR MOVIE" />
       <o-lolomo class="lolomo" :data="cardData" title="NOWPLAY MOVIE" />
