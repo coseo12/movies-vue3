@@ -1,0 +1,111 @@
+<template>
+  <div class="m-r-card">
+    <div class="m-r-card__rank">
+      {{ rank }}
+    </div>
+    <a-img class="m-r-card__img" :src="src" />
+  </div>
+</template>
+
+<script>
+import AImg from '@/components/atoms/AImg';
+
+export default {
+  components: {
+    AImg,
+  },
+  props: {
+    title: {
+      type: String,
+      required: false,
+      default: 'title',
+    },
+    src: {
+      type: String,
+      required: false,
+      default:
+        'https://cdn3.movieweb.com/i/article/ltBX7h8cBIkWHiRjfZAVaLYhrDfIC5/1200:100/The-Queens-Gambit-Trailer.jpg',
+    },
+    rating: {
+      type: Number,
+      required: false,
+      default: 5,
+    },
+    rank: {
+      type: Number,
+      required: false,
+      default: 1,
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+@import '@/assets/scss/_variables.scss';
+
+.m-r-card {
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  /* box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5); */
+  cursor: pointer;
+  font-weight: $font-weight-medium;
+  /* background: #262c2b; */
+  flex: 0 0 auto;
+
+  .m-r-card__rank {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 15px 20px;
+    font-size: 6rem;
+    text-shadow: $text-shadow-nav;
+    width: 8vw;
+  }
+
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .m-r-card__img {
+    width: 10.5vw;
+    /* min-width: 300px; */
+    height: 30vh;
+    /* min-height: 150px; */
+  }
+
+  .title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 10px;
+    animation: animate 1s ease-in-out;
+  }
+
+  .rating {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px;
+    font-size: $font-size-s3;
+    color: $color-rating;
+    animation: animate 1s ease-in-out;
+  }
+
+  @keyframes animate {
+    0%,
+    50%,
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+</style>

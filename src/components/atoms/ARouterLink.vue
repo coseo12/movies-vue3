@@ -22,9 +22,12 @@ export default {
 a {
   cursor: pointer;
   text-decoration: none;
-  color: $font-color;
-  font-size: $font-size;
-  font-weight: $font-weight-light;
+  color: $font-color-active-none;
+  font-size: $font-size-default;
+  font-weight: $font-weight-medium;
   margin-left: 10px;
+}
+.router-link-active {
+  color: $font-color-active;
 }
 </style>

@@ -1,21 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { DashboardPage, MoviePage, TvPage } from '@/components/pages';
+import PDashboard from '@/components/pages/PDashboard';
+import PMovie from '@/components/pages/PMovie';
+import PTv from '@/components/pages/PTv';
 
 const routes = [
   {
     path: '/',
     name: 'dashboard',
-    component: DashboardPage,
+    component: PDashboard,
   },
   {
     path: '/movie',
     name: 'movie',
-    component: MoviePage,
+    component: PMovie,
   },
   {
     path: '/tv',
     name: 'tv',
-    component: TvPage,
+    component: PTv,
   },
 ];
 
