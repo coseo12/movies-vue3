@@ -46,6 +46,7 @@ export default {
     },
   },
   setup(props) {
+    const btnLock = ref(false);
     const total = ref(0);
     const current = ref(0);
     const page = ref(5);
@@ -101,6 +102,7 @@ export default {
     };
 
     const moveSlide = type => {
+      btnLock.value = true;
       if (type === 'next') {
         style.value.left = `${slideLen.value}px`;
         style.value.transitionDuration = `1s`;
@@ -111,6 +113,7 @@ export default {
     };
 
     const prevFn = () => {
+      if (btnLock.value) return;
       current.value =
         props.data.length / page.value === 0
           ? (current.value = 0)
@@ -118,6 +121,7 @@ export default {
       moveSlide('prev');
     };
     const nextFn = () => {
+      if (btnLock.value) return;
       current.value =
         props.data.length / page.value === current.value
           ? 0
@@ -131,6 +135,7 @@ export default {
           style.value.left = 0;
           style.value.transitionDuration = '';
           list.value = getDataSlice();
+          btnLock.value = false;
         }, 100);
       }
     };
