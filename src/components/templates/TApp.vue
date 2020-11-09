@@ -6,18 +6,18 @@
       :searchFn="searchFn"
     />
     <router-view />
-    <o-footer />
+    <!-- <o-footer /> -->
   </div>
 </template>
 
 <script>
 import ONavBar from '@/components/organisms/ONavBar';
-import OFooter from '@/components/organisms/OFooter';
+// import OFooter from '@/components/organisms/OFooter';
 
 export default {
   components: {
     ONavBar,
-    OFooter,
+    // OFooter,
   },
   props: {
     menuList: {

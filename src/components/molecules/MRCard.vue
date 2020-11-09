@@ -15,6 +15,10 @@ export default {
     AImg,
   },
   props: {
+    id: {
+      type: Number,
+      required: false,
+    },
     title: {
       type: String,
       required: false,

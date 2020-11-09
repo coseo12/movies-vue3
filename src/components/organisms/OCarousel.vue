@@ -5,6 +5,7 @@
         <m-t-card
           v-for="(data, i) in list"
           :key="data.id"
+          :id="data.id"
           :title="data.title"
           :src="data.src"
           :ref="
@@ -13,12 +14,14 @@
             }
           "
           class="card"
+          @click="toDetail"
         />
       </template>
       <template v-else>
         <m-r-card
           v-for="(data, i) in list"
           :key="data.id"
+          :id="data.id"
           :title="data.title"
           :src="data.src"
           :rank="data.rank"
@@ -28,6 +31,7 @@
             }
           "
           class="card"
+          @click="toDetail"
         />
       </template>
     </div>
@@ -42,6 +46,7 @@
 
 <script>
 import { ref, onBeforeUpdate, onMounted, onUnmounted } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 import MTCard from '@/components/molecules/MTCard';
 import MRCard from '@/components/molecules/MRCard';
 import AIcon from '@/components/atoms/AIcon';
@@ -80,6 +85,19 @@ export default {
     const list = ref([]);
     const listLen = ref(0);
     const slideLen = ref(0);
+
+    const router = useRouter();
+    const route = useRoute();
+
+    const toDetail = () => {
+      router.push({
+        name: 'detail',
+        params: {
+          id: props.id,
+          name: route.name,
+        },
+      });
+    };
 
     const getArrayProxy = arr =>
       new Proxy(arr, {
@@ -196,6 +214,7 @@ export default {
       cardEls,
       style,
       transitionend,
+      toDetail,
     };
   },
 };

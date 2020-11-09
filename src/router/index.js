@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import PDashboard from '@/components/pages/PDashboard';
 import PMovie from '@/components/pages/PMovie';
 import PTv from '@/components/pages/PTv';
+import PDetail from '@/components/pages/PDetail';
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/tv',
     name: 'tv',
     component: PTv,
+  },
+  {
+    path: '/detail',
+    name: 'detail',
+    component: PDetail,
   },
 ];
 
