@@ -1,5 +1,8 @@
 <template>
   <div class="m-r-card">
+    <div class="m-r-card__rank">
+      {{ rank }}
+    </div>
     <a-img class="m-r-card__img" :src="src" />
   </div>
 </template>
@@ -28,6 +31,11 @@ export default {
       required: false,
       default: 5,
     },
+    rank: {
+      type: Number,
+      required: false,
+      default: 1,
+    },
   },
 };
 </script>
@@ -40,23 +48,35 @@ export default {
   display: flex;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5); */
   cursor: pointer;
   font-weight: $font-weight-medium;
+  /* background: #262c2b; */
   flex: 0 0 auto;
 
-  .m-r-card__img {
-    width: 18.5vw;
-    /* min-width: 300px; */
-    height: 50vh;
-    /* min-height: 150px; */
-    transform: scale(1);
-    transition: transform 0.5s ease-in-out;
+  .m-r-card__rank {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 15px 20px;
+    font-size: 6rem;
+    text-shadow: $text-shadow-nav;
+    width: 8vw;
+  }
 
-    &:hover {
-      transform: scale(1.2);
-      transition: transform 0.5s ease-in-out;
-    }
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .m-r-card__img {
+    width: 10.5vw;
+    /* min-width: 300px; */
+    height: 30vh;
+    /* min-height: 150px; */
   }
 
   .title {

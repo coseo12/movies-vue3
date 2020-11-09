@@ -34,6 +34,7 @@ export default {
       obj.title = `title${i}`;
       obj.src = src[ran];
       obj.rating = ran;
+      obj.rank = i + 1;
       data.value.push(obj);
     }
     return {

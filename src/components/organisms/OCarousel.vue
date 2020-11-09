@@ -1,18 +1,35 @@
 <template>
   <div class="o-carousel">
     <div class="box" ref="box" :style="style" @transitionend="transitionend">
-      <m-t-card
-        v-for="(data, i) in list"
-        :key="data.id"
-        :title="data.title"
-        :src="data.src"
-        :ref="
-          el => {
-            cardEls[i] = el;
-          }
-        "
-        class="card"
-      />
+      <template v-if="card === 'title'">
+        <m-t-card
+          v-for="(data, i) in list"
+          :key="data.id"
+          :title="data.title"
+          :src="data.src"
+          :ref="
+            el => {
+              cardEls[i] = el;
+            }
+          "
+          class="card"
+        />
+      </template>
+      <template v-else>
+        <m-r-card
+          v-for="(data, i) in list"
+          :key="data.id"
+          :title="data.title"
+          :src="data.src"
+          :rank="data.rank"
+          :ref="
+            el => {
+              cardEls[i] = el;
+            }
+          "
+          class="card"
+        />
+      </template>
     </div>
     <div class="prev btn" @click="prevFn">
       <a-icon class="icon" name="left" color="#ffffff" size="22px" />
@@ -26,11 +43,13 @@
 <script>
 import { ref, onBeforeUpdate, onMounted, onUnmounted } from 'vue';
 import MTCard from '@/components/molecules/MTCard';
+import MRCard from '@/components/molecules/MRCard';
 import AIcon from '@/components/atoms/AIcon';
 
 export default {
   components: {
     MTCard,
+    MRCard,
     AIcon,
   },
   props: {

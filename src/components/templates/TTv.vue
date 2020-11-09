@@ -5,6 +5,7 @@
       src="https://wallpaperaccess.com/full/2439222.jpg"
     />
     <div class="t-dashboard__movies">
+      <o-lolomo class="lolomo" :data="cardData" card="rank" title="TOP 50" />
       <o-lolomo class="lolomo" :data="cardData" title="POPULAR TV" />
       <o-lolomo class="lolomo" :data="cardData" title="TV SERISE" />
     </div>

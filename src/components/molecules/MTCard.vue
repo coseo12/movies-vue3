@@ -40,7 +40,7 @@ export default {
   display: flex;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5); */
   cursor: pointer;
   font-weight: $font-weight-medium;
   flex: 0 0 auto;
