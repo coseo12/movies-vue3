@@ -35,10 +35,10 @@
         />
       </template>
     </div>
-    <div class="prev btn" @click="prevFn">
+    <div v-if="showBtn" class="prev btn" @click="prevFn">
       <a-icon class="icon" name="left" color="#ffffff" size="22px" />
     </div>
-    <div class="next btn" @click="nextFn">
+    <div v-if="showBtn" class="next btn" @click="nextFn">
       <a-icon class="icon" name="right" color="#ffffff" size="22px" />
     </div>
   </div>
@@ -70,6 +70,7 @@ export default {
     },
   },
   setup(props) {
+    const showBtn = ref(true);
     const btnLock = ref(false);
     const total = ref(0);
     const current = ref(0);
@@ -122,6 +123,8 @@ export default {
       let prev = start - page.value - 1;
 
       if (total.value <= page.value - 1) {
+        showBtn.value = false;
+        style.value.left = 0;
         return items.slice(0);
       } else {
         while (totalPage) {
@@ -215,6 +218,7 @@ export default {
       style,
       transitionend,
       toDetail,
+      showBtn,
     };
   },
 };

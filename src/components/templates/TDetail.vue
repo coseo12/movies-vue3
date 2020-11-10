@@ -23,7 +23,8 @@ export default {
   .t-detail__bg {
     width: 100vw;
     height: 100%;
-    opacity: 0.2;
+    opacity: 0.5;
+    filter: blur(4px);
   }
 
   .t-detail__contents {

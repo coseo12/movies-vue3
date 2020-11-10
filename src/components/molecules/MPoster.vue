@@ -16,7 +16,7 @@ export default {
       type: String,
       required: false,
       default:
-        'https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701806056.jpg',
+        'https://cdn.shopify.com/s/files/1/1416/8662/products/Interstellar_2014_french_original_film_art_1200x.jpg?v=1596410086',
     },
   },
 };
@@ -27,6 +27,7 @@ export default {
   .m-poster__img {
     width: 30vw;
     height: 80vh;
+    border-radius: 10px;
   }
 }
 </style>
