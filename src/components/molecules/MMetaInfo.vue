@@ -10,12 +10,12 @@
       {{ content }}
     </div>
     <div class="m-meta-info__btn-box">
-      <a-button class="play-btn">
+      <!-- <a-button class="play-btn">
         <div class="btn__info">
           <a-icon class="icon" size="22px" name="play" color="#0e3742" />
           <span class="text">재생</span>
         </div>
-      </a-button>
+      </a-button> -->
       <a-button class="info-btn">
         <div class="btn__info">
           <a-icon class="icon" size="22px" name="info" color="#0e3742" />
