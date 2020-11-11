@@ -45,7 +45,14 @@
 </template>
 
 <script>
-import { ref, onBeforeUpdate, onMounted, onUnmounted, watchEffect } from 'vue';
+import {
+  ref,
+  onBeforeUpdate,
+  onMounted,
+  onUnmounted,
+  watch,
+  onUpdated,
+} from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import MTCard from '@/components/molecules/MTCard';
 import MRCard from '@/components/molecules/MRCard';
@@ -181,7 +188,7 @@ export default {
     };
 
     const setSlideLen = () => {
-      if (cardEls.value.length === 0) return;
+      if (cardEls.value.length <= 5) return;
       const idx = page.value + 1;
       // const prev = cardEls.value[idx]?.$el.getBoundingClientRect();
       const cur = cardEls.value[idx]?.$el.getBoundingClientRect();
@@ -203,10 +210,15 @@ export default {
       cardEls.value = [];
     });
 
+    onUpdated(() => {
+      setSlideLen();
+    });
+
     onUnmounted(() => {
       window.removeEventListener('resize', windowResize);
     });
-    watchEffect(() => {
+
+    watch(props, () => {
       list.value = getDataSlice();
     });
 
