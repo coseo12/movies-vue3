@@ -1,6 +1,7 @@
 <template>
   <div class="o-carousel">
     <div class="box" ref="box" :style="style" @transitionend="transitionend">
+      {{ data }}
       <template v-if="card === 'title'">
         <m-t-card
           v-for="(data, i) in list"
@@ -181,6 +182,7 @@ export default {
     };
 
     const setSlideLen = () => {
+      if (cardEls.value.length === 0) return;
       const idx = page.value + 1;
       // const prev = cardEls.value[idx]?.$el.getBoundingClientRect();
       const cur = cardEls.value[idx]?.$el.getBoundingClientRect();

@@ -1,7 +1,11 @@
 import { instance } from './index';
 
-function getList() {
-  return instance.get('movie/popular');
+function getPopularList(url) {
+  return instance.get(`/${url}/popular`);
 }
 
-export { getList };
+function getTrending(type) {
+  return instance.get(`/trending/${type}/week`);
+}
+
+export { getPopularList, getTrending };
