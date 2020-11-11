@@ -13,10 +13,9 @@ export default {
     TDashboard,
   },
   setup() {
-    const list = ref({ popular: [] });
+    const list = ref({});
     const all = useFetchList('all').list;
     watchEffect(() => {
-      console.log(all);
       all.value.sort(function(a, b) {
         if (a.vote_average > b.vote_average) {
           return 1;
@@ -26,17 +25,22 @@ export default {
         }
         return 0;
       });
-      all.value.forEach((i, idx) => {
-        console.log(i);
-        const obj = {};
-        obj.id = i.id;
-        obj.title = i.title;
-        obj.src = `${process.env.VUE_APP_IMG_SRC}${i.poster_path}`;
-        obj.rating = i.vote_average;
-        obj.rank = idx;
-        list.value.popular.push(obj);
-      });
-      console.log(list);
+
+      const fnMap = (item, idx) => {
+        const obj = { ...item };
+        obj.id = item.id;
+        obj.title = item.title;
+        obj.src = `${process.env.VUE_APP_IMG_SRC}${item.poster_path}`;
+        obj.rating = item.vote_average;
+        obj.rank = idx + 1;
+        return obj;
+      };
+
+      const popular = all.value.map(fnMap);
+
+      list.value = {
+        popular,
+      };
     });
 
     return {

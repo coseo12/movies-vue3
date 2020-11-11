@@ -1,7 +1,6 @@
 <template>
   <div class="o-carousel">
     <div class="box" ref="box" :style="style" @transitionend="transitionend">
-      {{ data }}
       <template v-if="card === 'title'">
         <m-t-card
           v-for="(data, i) in list"
@@ -46,7 +45,7 @@
 </template>
 
 <script>
-import { ref, onBeforeUpdate, onMounted, onUnmounted } from 'vue';
+import { ref, onBeforeUpdate, onMounted, onUnmounted, watchEffect } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import MTCard from '@/components/molecules/MTCard';
 import MRCard from '@/components/molecules/MRCard';
@@ -190,8 +189,6 @@ export default {
       slideLen.value = cur.left - next.left;
     };
 
-    list.value = getDataSlice();
-
     const windowResize = () => {
       setSlideLen();
     };
@@ -208,6 +205,9 @@ export default {
 
     onUnmounted(() => {
       window.removeEventListener('resize', windowResize);
+    });
+    watchEffect(() => {
+      list.value = getDataSlice();
     });
 
     return {
