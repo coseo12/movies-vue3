@@ -7,14 +7,16 @@
 <script>
 import { watchEffect, ref } from 'vue';
 import TDashboard from '@/components/templates/TDashboard';
-import useFetchList from '@/composables/useFetchList';
+import useFetchTrendingList from '@/composables/useFetchList';
 export default {
   components: {
     TDashboard,
   },
   setup() {
     const list = ref({});
-    const all = useFetchList('all').list;
+    const all = useFetchTrendingList('all').list;
+    const movie = useFetchTrendingList('movie').list;
+    const tv = useFetchTrendingList('tv').list;
     watchEffect(() => {
       all.value.sort(function(a, b) {
         if (a.vote_average > b.vote_average) {
@@ -37,9 +39,12 @@ export default {
       };
 
       const popular = all.value.map(fnMap);
-
+      const movieRank = movie.value.map(fnMap);
+      const tvRank = tv.value.map(fnMap);
       list.value = {
         popular,
+        movieRank,
+        tvRank,
       };
     });
 
