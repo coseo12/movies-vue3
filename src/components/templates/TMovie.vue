@@ -5,9 +5,22 @@
       src="https://i.pinimg.com/originals/2d/68/b4/2d68b431201137ee98e4b54434abfc5a.jpg"
     />
     <div class="t-dashboard__movies">
-      <o-lolomo class="lolomo" :data="cardData" card="rank" title="TOP 50" />
-      <o-lolomo class="lolomo" :data="cardData" title="POPULAR MOVIE" />
-      <o-lolomo class="lolomo" :data="cardData" title="NOWPLAY MOVIE" />
+      <o-lolomo
+        class="lolomo"
+        :data="cardData.popular"
+        card="rank"
+        title="POPULAR MOVIES"
+      />
+      <o-lolomo
+        class="lolomo"
+        :data="cardData.nowPlaying"
+        title="NOWPLAYING MOVIES"
+      />
+      <o-lolomo
+        class="lolomo"
+        :data="cardData.upcoming"
+        title="UPCOMING MOVIES"
+      />
     </div>
   </div>
 </template>
@@ -23,7 +36,7 @@ export default {
   },
   props: {
     cardData: {
-      type: Array,
+      type: Object,
       required: true,
     },
   },

@@ -7,7 +7,7 @@
 <script>
 import { watchEffect, ref } from 'vue';
 import TDashboard from '@/components/templates/TDashboard';
-import useFetchTrendingList from '@/composables/useFetchList';
+import useFetchTrendingList from '@/composables/useFetchTrendingList';
 export default {
   components: {
     TDashboard,
@@ -29,11 +29,10 @@ export default {
       });
 
       const fnMap = (item, idx) => {
-        const obj = { ...item };
+        const obj = {};
         obj.id = item.id;
         obj.title = item.title;
         obj.src = `${process.env.VUE_APP_IMG_SRC}${item.poster_path}`;
-        obj.rating = item.vote_average;
         obj.rank = idx + 1;
         return obj;
       };

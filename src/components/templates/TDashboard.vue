@@ -15,13 +15,13 @@
         class="lolomo"
         :data="cardData.movieRank"
         card="title"
-        title="POPULAR MOVIES"
+        title="TRENDING MOVIES"
       />
       <o-lolomo
         class="lolomo"
         :data="cardData.tvRank"
         card="title"
-        title="POPULAR TV"
+        title="TRENDING TV"
       />
     </div>
   </div>
