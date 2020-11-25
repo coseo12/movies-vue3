@@ -2,17 +2,20 @@
   <div class="o-detail">
     <m-poster class="o-detail__poster" />
     <m-overview class="o-detail__overview" />
+    <m-player />
   </div>
 </template>
 
 <script>
 import MPoster from '@/components/molecules/MPoster';
 import MOverview from '@/components/molecules/MOverview';
+import MPlayer from '@/components/molecules/MPlayer';
 
 export default {
   components: {
     MPoster,
     MOverview,
+    MPlayer,
   },
 };
 </script>

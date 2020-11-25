@@ -6,17 +6,20 @@
       :title="title"
       :content="content"
     />
+    <m-player class="m-player" id="KGWhSuXMvZA" width="380" height="220" />
   </div>
 </template>
 
 <script>
 import AImg from '@/components/atoms/AImg';
 import MMetaInfo from '@/components/molecules/MMetaInfo';
+import MPlayer from '@/components/molecules/MPlayer';
 
 export default {
   components: {
     AImg,
     MMetaInfo,
+    MPlayer,
   },
   props: {
     title: {
@@ -72,6 +75,12 @@ export default {
     position: absolute;
     left: 0;
     bottom: 20%;
+  }
+
+  .m-player {
+    position: absolute;
+    left: 1%;
+    bottom: 55%;
   }
 }
 </style>
