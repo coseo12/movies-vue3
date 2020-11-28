@@ -3,8 +3,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/_variables.scss';
-
 .a-input {
   outline: none;
   background-color: transparent;

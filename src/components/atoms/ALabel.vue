@@ -17,8 +17,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/_variables.scss';
-
 .a-label {
   margin: 2vh 2.5vw;
   font-size: $font-size-h1;

@@ -28,8 +28,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/_variables.scss';
-
 .m-menu-bar {
   display: flex;
   justify-content: center;

@@ -69,8 +69,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/_variables.scss';
-
 .o-nav-bar {
   width: 100vw;
   position: fixed;

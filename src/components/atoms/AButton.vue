@@ -9,8 +9,6 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/_variables.scss';
-
 .a-button {
   cursor: pointer;
   outline: none;

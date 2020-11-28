@@ -5,8 +5,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/_variables.scss';
-
 .m-logo {
   cursor: pointer;
   display: flex;

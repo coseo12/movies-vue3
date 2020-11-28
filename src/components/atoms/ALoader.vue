@@ -7,8 +7,6 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/_variables.scss';
-
 .a-loader {
   position: relative;
   width: 150px;
