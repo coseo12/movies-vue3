@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/vue-nomflix/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/movies-vue3/' : '/',
   css: {
     loaderOptions: {
       scss: {
