@@ -5,7 +5,7 @@
     :width="width"
     :height="height"
     :src="
-      `http://www.youtube.com/embed/${id}?autoplay=${autoplay}&mute=${autoplay}&enablejsapi=1`
+      `https://www.youtube.com/embed/${id}?autoplay=${autoplay}&mute=${autoplay}&enablejsapi=1`
     "
     allow="autoplay"
     frameborder="0"
